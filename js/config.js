@@ -10,10 +10,10 @@ const SITE_CONFIG = {
   // then one photo of her, then one photo of an old Filipino woman.
   // Same drop-the-file-then-list-it pattern as everything else.
   celebImages: [
-    // "assets/images/celeb1.jpg",
-    // "assets/images/celeb2.jpg",
-    // "assets/images/celeb3.jpg",
-    // "assets/images/celeb4.jpg",
+    // "assets/images/actress1.jpg",
+    // "assets/images/actress2.jpg",
+    // "assets/images/actress3.jpg",
+    // "assets/images/actress4.jpg",
   ],
   herSoloImage: "", // e.g. "assets/images/kathy.jpg"
   oldWomanImage: "", // e.g. "assets/images/lola.jpg"
