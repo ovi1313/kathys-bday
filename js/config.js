@@ -37,8 +37,8 @@ const SITE_CONFIG = {
   // Each page picks the next track in the list so you get variety;
   // if the list is empty, the music player just stays hidden.
   tracks: [
+    // "assets/music/song.mp3",
     // "assets/music/song1.mp3",
-    // "assets/music/song2.mp3",
   ],
 
   // The story timeline shown on memories.html — edit freely.
