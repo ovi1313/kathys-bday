@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play With Me 🎮</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .panel{display:none;}
+  .panel.active{display:block;}
+  #memory-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:12px;
+    max-width:480px; margin:26px auto 0;
+  }
+  .mem-card{
+    aspect-ratio:1/1; border-radius:14px; background:var(--hot);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.8rem; cursor:pointer; color:transparent;
+    transition:transform .3s ease, background .3s ease;
+    user-select:none;
+  }
+  .mem-card.flipped, .mem-card.matched{ background:var(--white); color:var(--ink); border:2px solid var(--bubblegum);}
+  .mem-card.matched{ opacity:0.55; cursor:default; }
+  #catch-area{
+    position:relative; height:360px; max-width:600px; margin:26px auto 0;
+    background:linear-gradient(#fff0f6, #ffe1ee);
+    border-radius:20px; border:3px dashed var(--bubblegum); overflow:hidden;
+  }
+  .falling-heart{
+    position:absolute; top:-30px; font-size:1.8rem; cursor:pointer;
+    background:none; border:none;
+  }
+  #catch-stats, #quiz-stats, #memory-stats{
+    display:flex; justify-content:center; gap:24px; margin-top:14px; font-weight:700; color:var(--hot-deep);
+  }
+  #quiz-box{ max-width:560px; margin:26px auto 0; }
+  .quiz-option{
+    display:block; width:100%; text-align:left; padding:14px 18px; margin-bottom:10px;
+    border-radius:14px; border:2px solid var(--bubblegum); background:white; cursor:pointer;
+    font-family:var(--sans); font-size:1rem;
+  }
+  .quiz-option.correct{ background:#d8f5d8; border-color:#4caf50; }
+  .quiz-option.wrong{ background:#ffd9d9; border-color:#e05555; }
+  .game-result{ text-align:center; font-family:var(--hand); font-size:1.6rem; color:var(--hot-deep); margin-top:16px; }
+</style>
+</head>
+<body data-page="games">
+
+<div id="float-layer"></div>
+<div class="haori-sash"></div>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="bow"><span class="bow-center"></span></span> Us</a>
+  <ul>
+    <li><a class="nav-link" href="index.html">Home</a></li>
+    <li><a class="nav-link" href="memories.html">Our Story</a></li>
+    <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+    <li><a class="nav-link" href="letter.html">For You</a></li>
+    <li><a class="nav-link" href="admirers.html">Confession</a></li>
+    <li><a class="nav-link" href="games.html">Play</a></li>
+  </ul>
+</nav>
+
+<main class="page-wrap">
+  <section class="center">
+    <h1>Play With Me</h1>
+    <p class="script" style="font-size:1.4rem;">three tiny games, made for one very specific person</p>
+  </section>
+
+  <div id="hub" class="game-grid">
+    <div class="card game-card" data-open="memory">
+      <span class="emoji">🎀</span>
+      <h3>Memory Match</h3>
+      <p>Flip and match the pairs.</p>
+    </div>
+    <div class="card game-card" data-open="catch">
+      <span class="emoji">💗</span>
+      <h3>Catch the Hearts</h3>
+      <p>30 seconds, click fast.</p>
+    </div>
+    <div class="card game-card" data-open="quiz">
+      <span class="emoji">🗡️</span>
+      <h3>How Well Do You Know Us?</h3>
+      <p>A short quiz about... us.</p>
+    </div>
+  </div>
+
+  <div class="spark-divider"></div>
+
+  <!-- MEMORY MATCH -->
+  <section id="panel-memory" class="panel">
+    <h2 class="center">Memory Match</h2>
+    <div id="memory-stats"><span id="mem-moves">Moves: 0</span></div>
+    <div id="memory-grid"></div>
+    <div id="memory-result" class="game-result"></div>
+    <div class="center" style="margin-top:18px;">
+      <button class="btn ghost" id="mem-restart">Restart</button>
+      <button class="btn ghost" data-back>Back to games</button>
+    </div>
+  </section>
+
+  <!-- CATCH THE HEARTS -->
+  <section id="panel-catch" class="panel">
+    <h2 class="center">Catch the Hearts</h2>
+    <div id="catch-stats">
+      <span id="catch-score">Score: 0</span>
+      <span id="catch-time">Time: 30</span>
+    </div>
+    <div id="catch-area"></div>
+    <div id="catch-result" class="game-result"></div>
+    <div class="center" style="margin-top:18px;">
+      <button class="btn" id="catch-start">Start</button>
+      <button class="btn ghost" data-back>Back to games</button>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="panel-quiz" class="panel">
+    <h2 class="center">How Well Do You Know Us?</h2>
+    <div id="quiz-stats"><span id="quiz-progress">Question 1</span></div>
+    <div id="quiz-box"></div>
+    <div id="quiz-result" class="game-result"></div>
+    <div class="center" style="margin-top:18px;">
+      <button class="btn ghost" data-back>Back to games</button>
+    </div>
+  </section>
+</main>
+
+<div class="haori-sash"></div>
+<footer class="site-footer">made with 💗 by <span data-my-name>me</span>, for <span data-her-name>you</span></footer>
+
+<div class="music-bar hidden" id="music-bar">
+  <button class="play-toggle">▶</button>
+  <span class="track-name">music</span>
+  <button class="next-track">⏭</button>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/games.js"></script>
+</body>
+</html>

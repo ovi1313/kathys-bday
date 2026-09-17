@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💗</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .letter-paper{
+    background:var(--white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:44px;
+    max-width:720px; margin:0 auto;
+    border:2px solid #ffd3e6;
+    font-family:var(--hand);
+    font-size:1.35rem;
+    line-height:1.8;
+    color:var(--ink);
+  }
+  .letter-paper p{font-size:inherit; line-height:inherit;}
+  .signature{ text-align:right; font-size:1.7rem; color:var(--hot-deep); margin-top:20px;}
+  .reasons{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px; margin-top:30px;
+  }
+  .reason-card{
+    background:var(--white); border-radius:16px; padding:18px;
+    border:2px dashed var(--bubblegum); text-align:center; font-weight:600;
+  }
+</style>
+</head>
+<body data-page="letter">
+
+<div id="float-layer"></div>
+<div class="haori-sash"></div>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="bow"><span class="bow-center"></span></span> Us</a>
+  <ul>
+    <li><a class="nav-link" href="index.html">Home</a></li>
+    <li><a class="nav-link" href="memories.html">Our Story</a></li>
+    <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+    <li><a class="nav-link" href="letter.html">For You</a></li>
+    <li><a class="nav-link" href="admirers.html">Confession</a></li>
+    <li><a class="nav-link" href="games.html">Play</a></li>
+  </ul>
+</nav>
+
+<main class="page-wrap">
+  <section class="center">
+    <h1>A Little Letter</h1>
+  </section>
+
+  <div class="letter-paper">
+    <p>My dearest <span data-her-name>love</span>,</p>
+    <p>Happy birthday. I still think about how strange it is that we found each other in a Roblox lobby of all places, and how the first time I actually heard your voice on that first Discord call, something in me just knew you'd matter.</p>
+    <p>You became my best friend so fast it almost didn't feel real — you told me everything, the big things and the small things, and I never stopped wanting to be someone worth telling things to.</p>
+    <p>There was a stretch where that was hard. You were with someone else, and I sat with feelings I didn't say out loud, because what you needed from me then was a friend who showed up for you without conditions. So that's what I tried to be.</p>
+    <p>And then June 2026 happened, and somehow the boy from that Roblox lobby got to become yours. I don't think I've stopped being grateful since.</p>
+    <p>So today isn't just your birthday. It's another year of the story I'd choose again, every single time.</p>
+    <p class="signature">— <span data-my-name>me</span>, completely yours</p>
+  </div>
+
+  <div class="spark-divider"></div>
+
+  <section>
+    <h2 class="center">A few reasons, off the top of my head</h2>
+    <div class="reasons">
+      <div class="reason-card">🌸 the way you say my name when you're excited about something</div>
+      <div class="reason-card">🎧 every voice call that turned into 3am somehow</div>
+      <div class="reason-card">💌 how easy it's always been to tell you anything</div>
+      <div class="reason-card">🩷 that you stuck around long enough for this to happen</div>
+      <div class="reason-card">🗡️ your questionable but relentless demon slayer opinions</div>
+      <div class="reason-card">🎀 just... you, honestly</div>
+    </div>
+  </section>
+</main>
+
+<div class="haori-sash"></div>
+<footer class="site-footer">made with 💗 by <span data-my-name>me</span>, for <span data-her-name>you</span></footer>
+
+<div class="music-bar hidden" id="music-bar">
+  <button class="play-toggle">▶</button>
+  <span class="track-name">music</span>
+  <button class="next-track">⏭</button>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All These Are Dying to Date Me 😏</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😏</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .four-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;
+    max-width:760px; margin:26px auto 0;
+  }
+  @media (max-width:640px){ .four-grid{ grid-template-columns:repeat(2, 1fr); } }
+  .versus{
+    text-align:center; margin:34px 0 10px; font-family:var(--hand);
+    font-size:2rem; color:var(--hot-deep);
+  }
+  .single-slot{
+    max-width:280px; margin:18px auto 0;
+  }
+  .single-slot .photo-slot{ aspect-ratio:4/5; }
+  .caption{
+    text-align:center; font-family:var(--hand); font-size:1.7rem;
+    color:var(--hot-deep); margin-top:14px;
+  }
+  .caption.small{ font-size:1.3rem; color:var(--ink); }
+</style>
+</head>
+<body data-page="admirers">
+
+<div id="float-layer"></div>
+<div class="haori-sash"></div>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="bow"><span class="bow-center"></span></span> Us</a>
+  <ul>
+    <li><a class="nav-link" href="index.html">Home</a></li>
+    <li><a class="nav-link" href="memories.html">Our Story</a></li>
+    <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+    <li><a class="nav-link" href="letter.html">For You</a></li>
+    <li><a class="nav-link" href="admirers.html">Confession</a></li>
+    <li><a class="nav-link" href="games.html">Play</a></li>
+  </ul>
+</nav>
+
+<main class="page-wrap">
+  <section class="center">
+    <h1>All These Are Dying to Date Me</h1>
+    <p class="script" style="font-size:1.3rem;">it's a real problem, honestly</p>
+  </section>
+
+  <div id="celeb-grid" class="four-grid"></div>
+
+  <div class="versus">but...</div>
+
+  <div class="single-slot" id="her-photo-wrap">
+    <div class="photo-slot" id="her-photo"></div>
+  </div>
+  <p class="caption">All I want is <span data-her-name>her</span>.</p>
+
+  <div class="spark-divider"></div>
+
+  <div class="single-slot" id="old-woman-wrap">
+    <div class="photo-slot" id="old-woman-photo"></div>
+  </div>
+  <p class="caption small">And even if you look like this after 60 years — I'd still love you.</p>
+</main>
+
+<div class="haori-sash"></div>
+<footer class="site-footer">made with 💗 by <span data-my-name>me</span>, for <span data-her-name>you</span></footer>
+
+<div class="music-bar hidden" id="music-bar">
+  <button class="play-toggle">▶</button>
+  <span class="track-name">music</span>
+  <button class="next-track">⏭</button>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
