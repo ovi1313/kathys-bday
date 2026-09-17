@@ -15,8 +15,8 @@ const SITE_CONFIG = {
     // "assets/images/actress3.jpg",
     // "assets/images/actress4.jpg",
   ],
-  herSoloImage: "", // e.g. "assets/images/kathy.jpg"
-  oldWomanImage: "", // e.g. "assets/images/lola.jpg"
+  herSoloImage: "", // e.g. "assets/images/kathyis.jpg"
+  oldWomanImage: "", // e.g. "assets/images/old.webp.jpg"
 
   // Put image files inside assets/images/ and list the filenames here.
   // They will fill the gallery + the memory timeline in order.
