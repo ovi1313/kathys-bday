@@ -10,35 +10,35 @@ const SITE_CONFIG = {
   // then one photo of her, then one photo of an old Filipino woman.
   // Same drop-the-file-then-list-it pattern as everything else.
   celebImages: [
-    // "assets/images/actress1.jpg",
-    // "assets/images/actress2.jpg",
-    // "assets/images/actress3.jpg",
-    // "assets/images/actress4.jpg",
+     "assets/images/actress1.jpg",
+     "assets/images/actress2.jpg",
+     "assets/images/actress3.jpg",
+     "assets/images/actress4.jpg",
   ],
-  herSoloImage: "", // e.g. "assets/images/kathyis.jpg"
-  oldWomanImage: "", // e.g. "assets/images/old.webp.jpg"
+  herSoloImage: "",  "assets/images/kathyis.jpg"
+  oldWomanImage: "",  "assets/images/old.webp.jpg"
 
   // Put image files inside assets/images/ and list the filenames here.
   // They will fill the gallery + the memory timeline in order.
   galleryImages: [
-    // "assets/images/roblox.jpg",
-    // "assets/images/firsttime.jpg",
-     // "assets/images/kathy4.jpg",
-     // "assets/images/kathy5.jpg",
-     // "assets/images/kathy2.jpg",
-     // "assets/images/kathy1.jpg",
-     // "assets/images/kathy6.jpg",
-     // "assets/images/kathy7.jpg",
-     // "assets/images/kathy8.jpg",
-     // "assets/images/kathy9.jpg",
+    "assets/images/roblox.jpg",
+     "assets/images/firsttime.jpg",
+      "assets/images/kathy4.jpg",
+      "assets/images/kathy5.jpg",
+      "assets/images/kathy2.jpg",
+      "assets/images/kathy1.jpg",
+      "assets/images/kathy6.jpg",
+      "assets/images/kathy7.jpg",
+      "assets/images/kathy8.jpg",
+      "assets/images/kathy9.jpg",
   ],
 
   // Put mp3 files inside assets/music/ and list them here.
   // Each page picks the next track in the list so you get variety;
   // if the list is empty, the music player just stays hidden.
   tracks: [
-    // "assets/music/song.mp3",
-    // "assets/music/song1.mp3",
+     "assets/music/song.mp3",
+     "assets/music/song1.mp3",
   ],
 
   // The story timeline shown on memories.html — edit freely.
