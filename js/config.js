@@ -2,7 +2,7 @@
    EDIT ME FIRST — everything personal lives in this one file.
    ============================================================ */
 const SITE_CONFIG = {
-  herName: "Kathy",              // <-- change to her real name
+  herName: "kathy",              // <-- change to her real name
   myName: "Ovi",                    // signs the letters/messages
   birthdayDateLabel: "Her Birthday", // shown on the hero if you want a specific date, e.g. "October 4th"
 
@@ -15,22 +15,22 @@ const SITE_CONFIG = {
      "assets/images/actress3.jpg",
      "assets/images/actress4.jpg",
   ],
-  herSoloImage: "",  "assets/images/kathyis.jpg"
-  oldWomanImage: "",  "assets/images/old.webp.jpg"
+  herSoloImage: "assets/images/kathyis.jpg"
+  oldWomanImage: "assets/images/old.webp.jpg"
 
   // Put image files inside assets/images/ and list the filenames here.
   // They will fill the gallery + the memory timeline in order.
   galleryImages: [
-    "assets/images/roblox.jpg",
+     "assets/images/roblox.jpg",
      "assets/images/firsttime.jpg",
-      "assets/images/kathy4.jpg",
-      "assets/images/kathy5.jpg",
-      "assets/images/kathy2.jpg",
-      "assets/images/kathy1.jpg",
-      "assets/images/kathy6.jpg",
-      "assets/images/kathy7.jpg",
-      "assets/images/kathy8.jpg",
-      "assets/images/kathy9.jpg",
+     "assets/images/kathy4.jpg",
+     "assets/images/kathy5.jpg",
+     "assets/images/kathy2.jpg",
+     "assets/images/kathy1.jpg",
+     "assets/images/kathy6.jpg",
+     "assets/images/kathy7.jpg",
+     "assets/images/kathy8.jpg",
+     "assets/images/kathy9.jpg",
   ],
 
   // Put mp3 files inside assets/music/ and list them here.
