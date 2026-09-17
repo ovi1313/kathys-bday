@@ -1,0 +1,272 @@
+/* ============================================================
+   Palette
+   - Hello Kitty pinks:  blush #FFE7F0, bubblegum #FF8FB8, hot #FF3E88
+   - Demon Slayer accents:
+       Tanjiro haori   -> forest #234D3A / charcoal #1B1B1B checker
+       Nezuko          -> deep pink #E85D9E + bamboo green #7BAE7F
+       Zenitsu         -> spark yellow #FFD23F
+   ============================================================ */
+:root{
+  --blush:#FFE7F0;
+  --cream:#FFF6FA;
+  --bubblegum:#FF8FB8;
+  --hot:#FF3E88;
+  --hot-deep:#D81C63;
+  --forest:#234D3A;
+  --charcoal:#201A1D;
+  --bamboo:#7BAE7F;
+  --spark:#FFD23F;
+  --ink:#3B2430;
+  --white:#FFFFFF;
+  --shadow: 0 10px 30px rgba(216, 28, 99, 0.18);
+  --radius: 22px;
+  --serif: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --hand: "Caveat", "Segoe Script", cursive;
+  --sans: "Quicksand", "Segoe UI", sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 10%, var(--blush) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, #ffd9ea 0%, transparent 40%),
+    var(--cream);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+}
+
+/* -------------------- Checker sash (Tanjiro) -------------------- */
+.haori-sash{
+  height:14px;
+  width:100%;
+  background-image:
+    linear-gradient(45deg, var(--forest) 25%, transparent 25%, transparent 75%, var(--forest) 75%, var(--forest)),
+    linear-gradient(45deg, var(--forest) 25%, var(--charcoal) 25%, var(--charcoal) 75%, var(--forest) 75%, var(--forest));
+  background-size:16px 16px;
+  background-position:0 0, 8px 8px;
+}
+
+/* -------------------- Nav -------------------- */
+.site-nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 28px;
+  background:rgba(255,246,250,0.88);
+  backdrop-filter: blur(8px);
+  border-bottom:3px dashed var(--bubblegum);
+}
+.site-nav .brand{
+  font-family:var(--hand);
+  font-size:1.6rem;
+  color:var(--hot-deep);
+  text-decoration:none;
+  display:flex; align-items:center; gap:8px;
+}
+.site-nav ul{
+  list-style:none; display:flex; gap:6px; margin:0; padding:0;
+  flex-wrap:wrap;
+}
+.site-nav a.nav-link{
+  text-decoration:none;
+  color:var(--ink);
+  font-weight:600;
+  padding:8px 14px;
+  border-radius:999px;
+  transition:background .2s ease, color .2s ease;
+  font-size:0.95rem;
+}
+.site-nav a.nav-link:hover, .site-nav a.nav-link.active{
+  background:var(--hot);
+  color:white;
+}
+
+/* -------------------- Layout helpers -------------------- */
+.page-wrap{max-width:1100px; margin:0 auto; padding:48px 24px 90px;}
+.center{text-align:center;}
+h1,h2,h3{font-family:var(--serif); margin:0 0 12px;}
+h1{font-size:clamp(2.2rem, 5vw, 3.6rem); color:var(--hot-deep);}
+h2{font-size:clamp(1.6rem, 3vw, 2.2rem); color:var(--hot-deep);}
+p{line-height:1.65; font-size:1.05rem;}
+.script{font-family:var(--hand); color:var(--hot-deep);}
+
+.btn{
+  display:inline-block;
+  padding:14px 32px;
+  border-radius:999px;
+  background:var(--hot);
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-family:var(--sans);
+  font-size:1rem;
+  box-shadow:var(--shadow);
+  transition:transform .2s ease, background .2s ease;
+}
+.btn:hover{transform:translateY(-3px); background:var(--hot-deep);}
+.btn.ghost{
+  background:transparent;
+  color:var(--hot-deep);
+  border:2px solid var(--hot);
+  box-shadow:none;
+}
+
+/* -------------------- Hello Kitty bow -------------------- */
+.bow{
+  display:inline-block;
+  width:34px; height:20px;
+  position:relative;
+}
+.bow::before,.bow::after{
+  content:"";
+  position:absolute; top:0;
+  width:16px; height:20px;
+  background:var(--hot);
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+.bow::before{left:0; transform:rotate(-20deg);}
+.bow::after{right:0; transform:rotate(20deg);}
+.bow-center{
+  position:absolute; left:50%; top:50%;
+  width:8px; height:8px;
+  background:var(--hot-deep);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+
+/* -------------------- Cards -------------------- */
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:26px;
+  border:2px solid #ffd3e6;
+}
+
+/* -------------------- Floating hearts/petals canvas layer -------------------- */
+#float-layer{
+  position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden;
+}
+.floaty{
+  position:absolute; top:-40px;
+  font-size:1.4rem;
+  animation:fall linear infinite;
+  opacity:0.85;
+}
+@keyframes fall{
+  to{ transform:translateY(110vh) rotate(360deg); }
+}
+
+/* -------------------- Music player -------------------- */
+.music-bar{
+  position:fixed; bottom:18px; right:18px; z-index:60;
+  background:var(--white);
+  border-radius:999px;
+  box-shadow:var(--shadow);
+  padding:10px 16px;
+  display:flex; align-items:center; gap:10px;
+  border:2px solid var(--bubblegum);
+  font-size:0.9rem;
+}
+.music-bar button{
+  background:var(--hot); color:white; border:none;
+  width:36px; height:36px; border-radius:50%;
+  cursor:pointer; font-size:1rem;
+  display:flex; align-items:center; justify-content:center;
+}
+.music-bar .track-name{max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.music-bar.hidden{display:none;}
+
+/* -------------------- Photo slots -------------------- */
+.photo-slot{
+  aspect-ratio:1/1;
+  border-radius:18px;
+  background:repeating-linear-gradient(45deg, #ffe1ee, #ffe1ee 10px, #fff0f6 10px, #fff0f6 20px);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--hot-deep);
+  font-weight:700;
+  text-align:center;
+  border:3px dashed var(--bubblegum);
+  overflow:hidden;
+  font-size:0.9rem;
+  padding:10px;
+}
+.photo-slot img{width:100%; height:100%; object-fit:cover; border-radius:14px;}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(180px,1fr));
+  gap:18px;
+  margin-top:24px;
+}
+
+/* -------------------- Timeline -------------------- */
+.timeline{
+  position:relative;
+  margin-top:40px;
+  padding-left:34px;
+  border-left:4px dotted var(--bubblegum);
+}
+.timeline-item{
+  position:relative;
+  margin-bottom:38px;
+}
+.timeline-item::before{
+  content:attr(data-icon);
+  position:absolute; left:-52px; top:0;
+  width:36px; height:36px;
+  background:var(--white);
+  border:3px solid var(--hot);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem;
+}
+.timeline-item .year{
+  font-family:var(--hand); color:var(--forest); font-size:1.3rem; font-weight:700;
+}
+
+/* -------------------- Zenitsu spark divider -------------------- */
+.spark-divider{
+  height:6px; margin:36px 0;
+  background:repeating-linear-gradient(90deg, var(--spark) 0 14px, transparent 14px 24px);
+  border-radius:6px;
+  opacity:0.8;
+}
+
+/* -------------------- Footer -------------------- */
+.site-footer{
+  text-align:center; padding:26px; color:var(--hot-deep);
+  font-family:var(--hand); font-size:1.3rem;
+}
+
+/* -------------------- Game hub cards -------------------- */
+.game-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px; margin-top:26px;
+}
+.game-card{cursor:pointer; text-align:center;}
+.game-card .emoji{font-size:2.4rem;}
+
+/* -------------------- Memory card cluster (used in letter/messages page) -------------------- */
+.msg-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+  border-left:8px solid var(--hot);
+  margin-bottom:24px;
+}
+
+@media (max-width:640px){
+  .site-nav{flex-direction:column; gap:10px; align-items:flex-start;}
+  .timeline{padding-left:26px;}
+  .timeline-item::before{left:-40px; width:30px; height:30px; font-size:0.95rem;}
+}
